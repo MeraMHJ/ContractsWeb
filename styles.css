@@ -78,31 +78,31 @@ body {
   margin: 0;
   min-width: 320px;
   overflow-x: hidden;
-  background: var(--canvas);
+  background:
+    radial-gradient(
+      circle at var(--spot-x) var(--spot-y),
+      rgb(255 255 255 / 0.18) 0%,
+      rgb(255 255 255 / 0.08) 12%,
+      rgb(0 0 0 / 0.08) 28%,
+      rgb(0 0 0 / 0.42) 72%,
+      rgb(0 0 0 / 0.58) 100%
+    ),
+    var(--canvas);
   color: var(--ink);
   font: 400 20px/1.4 var(--body);
 }
 
-body::before {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  content: "";
-  pointer-events: none;
-  background: radial-gradient(
-    circle at var(--spot-x) var(--spot-y),
-    rgb(255 255 255 / 0.18) 0%,
-    rgb(255 255 255 / 0.08) 12%,
-    rgb(0 0 0 / 0.08) 28%,
-    rgb(0 0 0 / 0.42) 72%,
-    rgb(0 0 0 / 0.58) 100%
-  );
-  opacity: 0;
-  transition: opacity 220ms ease;
-}
-
-body.is-spotlighting::before {
-  opacity: 1;
+body.is-spotlighting {
+  background:
+    radial-gradient(
+      circle at var(--spot-x) var(--spot-y),
+      rgb(255 255 255 / 0.18) 0%,
+      rgb(255 255 255 / 0.08) 12%,
+      rgb(0 0 0 / 0.08) 28%,
+      rgb(0 0 0 / 0.42) 72%,
+      rgb(0 0 0 / 0.58) 100%
+    ),
+    var(--canvas);
 }
 
 button,

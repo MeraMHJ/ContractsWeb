@@ -18,15 +18,15 @@
       document.body.classList.add('is-spotlighting');
     };
 
-    document.addEventListener('pointermove', (event) => {
+    window.addEventListener('pointermove', (event) => {
       setSpotlightPosition(event.clientX, event.clientY);
     });
 
-    document.addEventListener('pointerleave', () => {
+    window.addEventListener('pointerleave', () => {
       document.body.classList.remove('is-spotlighting');
     });
 
-    document.addEventListener('pointerenter', (event) => {
+    window.addEventListener('pointerenter', (event) => {
       setSpotlightPosition(event.clientX, event.clientY);
       document.body.classList.add('is-spotlighting');
     });
