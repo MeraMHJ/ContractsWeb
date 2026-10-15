@@ -1,4 +1,46 @@
 /* Desktop-8 visual system and responsive layout. */
+@font-face {
+  font-family: "The Seasons";
+  src: url("Fontspring-DEMO-theseasons-reg.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "The Seasons";
+  src: url("Fontspring-DEMO-theseasons-lt.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "The Seasons";
+  src: url("Fontspring-DEMO-theseasons-bd.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "The Seasons";
+  src: url("Fontspring-DEMO-theseasons-it.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "The Seasons";
+  src: url("Fontspring-DEMO-theseasons-ltit.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "The Seasons";
+  src: url("Fontspring-DEMO-theseasons-bdit.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
 :root {
   color-scheme: light;
   --canvas: #00704b;
@@ -14,8 +56,8 @@
   /* Change this token to recolor the character folder surfaces. */
   --folder-color: #fffefd;
 
-  --display: "Abhaya Libre", Georgia, serif;
-  --body: "EB Garamond", Georgia, serif;
+  --display: "The Seasons", Georgia, serif;
+  --body: "The Seasons", Georgia, serif;
   --gold: #d2b46c;
   box-sizing: border-box;
   scroll-behavior: smooth;
