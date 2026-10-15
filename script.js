@@ -34,10 +34,6 @@
     window.addEventListener('blur', () => {
       document.body.classList.remove('is-spotlighting');
     });
-
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-    setSpotlightPosition(centerX, centerY);
   };
 
   spotlightBody();
