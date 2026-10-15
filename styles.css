@@ -56,13 +56,23 @@
   /* Change this token to recolor the character folder surfaces. */
   --folder-color: #fffefd;
 
-  --display: "The Seasons", Georgia, serif;
+  --display: "Abhaya Libre", Georgia, serif;
   --body: "EB Garamond", Georgia, serif;
   --gold: #d2b46c;
   box-sizing: border-box;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-height) + 12px);
   background: var(--canvas);
+}
+
+.hero-title h1,
+.game-inner h2,
+.case-file h2,
+.dialog-paper h2,
+.character-page-header h1,
+.character-profile h2,
+.character-document h3 {
+  font-family: "The Seasons", Georgia, serif;
 }
 
 *,
