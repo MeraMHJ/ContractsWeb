@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" data-motion="on">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore the Unfinished Contracts archive through an interactive WebGL city, case files, and character folders."
+    />
+    <meta name="theme-color" content="#a8a8a8" />
+    <title>Unfinished Contracts — Web Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700;800&family=EB+Garamond:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Framed hero from the Desktop-8 composition. -->
+    <header class="hero" id="top">
+      <div class="hero-window" aria-hidden="true">
+        <span class="hero-panel"></span>
+        <img src="assets/desktop8-union.svg" alt="" />
+      </div>
+      <div class="hero-title">
+        <img src="assets/desktop8-plaque.svg" alt="" />
+        <h1>Unfinished<br />Contracts</h1>
+      </div>
+    </header>
+
+    <!-- Sticky links keep the three content areas reachable. -->
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#game">Web Game</a>
+      <a href="#world">The World</a>
+      <a href="#characters">Characters</a>
+    </nav>
+
+    <main id="main">
+      <!-- The canvas is rendered by the standalone WebGL script. -->
+      <section class="game-section" id="game" aria-labelledby="game-title">
+        <div class="section-inner game-inner">
+          <h2 id="game-title">Web Game Title</h2>
+          <div class="game-frame">
+            <iframe
+              class="game-preview"
+              src="https://meramhj.github.io/UnfinishedContracts"
+              title="Unfinished Contracts game preview"
+              loading="lazy"
+              tabindex="-1"
+              aria-hidden="true"
+            ></iframe>
+            <a
+              href="https://meramhj.github.io/UnfinishedContracts"
+              class="play-button-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Play Unfinished Contracts in a new tab"
+            >
+              <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5.8v12.4L18 12 8 5.8Z" />
+              </svg>
+            </a>
+          </div>
+          <p class="game-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.<br />
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+      </section>
+
+      <!-- The evidence threads retain their artwork; thumbtacks are drawn in CSS. -->
+      <section class="world-section" id="world" aria-label="World case files">
+        <div class="world-board">
+          <span class="case-thread thread-one" aria-hidden="true"></span>
+          <span class="case-thread thread-two" aria-hidden="true"></span>
+
+          <article class="case-file case-meridian" data-case="meridian">
+            <span class="world-clip world-clip-left" aria-hidden="true"></span>
+            <h2>Wibisono Meridian</h2>
+            <p>
+              About the ... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="type-lines" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <button class="file-link" type="button" data-case-open="meridian">
+              Inspect case file
+            </button>
+          </article>
+
+          <article class="case-file case-shutdown" data-case="shutdown">
+            <span class="world-clip world-clip-right" aria-hidden="true"></span>
+            <h2>Mysterious Shutdown..</h2>
+            <p>
+              Wibisono Meridian's lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="type-lines" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <button class="file-link" type="button" data-case-open="shutdown">
+              Inspect case file
+            </button>
+          </article>
+
+          <article class="case-file case-consulting" data-case="consulting">
+            <span class="world-clip world-clip-low" aria-hidden="true"></span>
+            <h2>M. Consulting</h2>
+            <p>
+              A consulting firm with no registered office.
+            </p>
+            <div class="type-lines" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <button class="file-link" type="button" data-case-open="consulting">
+              Inspect case file
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Folder covers and portrait inserts use the supplied Figma assets. -->
+      <section class="characters-section" id="characters" aria-label="Character folders">
+        <div class="folder-stage">
+          <article class="folder folder-clara">
+            <span class="folder-back back-one" aria-hidden="true"></span>
+            <span class="folder-back back-two" aria-hidden="true"></span>
+            <img src="assets/desktop8-character-sheet.svg" alt="Clara Wibisono's character folder cover" />
+            <img class="folder-photo photo-clara" src="assets/desktop8-paper.svg" alt="" />
+            <p class="folder-copy copy-primary">Clara Wibisono<br />Head of<br />Status: Active</p>
+            <p class="folder-copy copy-secondary">
+              Clara is the head of Wibisono Meridian
+            </p>
+            <a class="folder-open" href="characters.html#clara">
+              Open Clara Wibisono's folder
+            </a>
+          </article>
+          <article class="folder folder-leo">
+            <span class="folder-back back-one" aria-hidden="true"></span>
+            <span class="folder-back back-two" aria-hidden="true"></span>
+            <img src="assets/desktop8-character-sheet.svg" alt="Leo Prasetyo's character folder cover" />
+            <img class="folder-photo photo-leo" src="assets/desktop8-paper.svg" alt="" />
+            <p class="folder-copy copy-primary">Leo Prasetyo<br />Head of Security<br />Status: Active</p>
+            <p class="folder-copy copy-secondary">
+             Leo Prasetyo, abcdef
+            </p>
+            <a class="folder-open" href="characters.html#leo">
+              Open Leo Prasetyo's folder
+            </a>
+          </article>
+          <article class="folder folder-mconsult">
+            <span class="folder-back back-one" aria-hidden="true"></span>
+            <span class="folder-back back-two" aria-hidden="true"></span>
+            <img src="assets/desktop8-character-sheet.svg" alt="M. Consulting's character folder cover" />
+            <img class="folder-photo photo-mconsult" src="assets/desktop8-paper.svg" alt="" />
+            <p class="folder-copy copy-primary">M.<br />Consultant</p>
+            <p class="folder-copy copy-secondary">
+              M. Consulting’s founder and sole employee, M is known for their discretion and ability to make deals that others cannot.
+            </p>
+            <a class="folder-open" href="characters.html#mconsult">
+              Open M. Consulting folder
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="record-dialog" id="record-dialog" aria-labelledby="dialog-title">
+      <form method="dialog" class="dialog-paper">
+        <button class="dialog-close" aria-label="Close record">×</button>
+        <p class="dialog-kicker" id="dialog-kicker">ARCHIVE RECORD</p>
+        <h2 id="dialog-title">Record title</h2>
+        <p id="dialog-copy"></p>
+        <button class="dialog-action" value="close">Return to the archive</button>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
