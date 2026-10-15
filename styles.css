@@ -971,6 +971,20 @@ a:focus-visible {
   font-family: "The Seasons", Georgia, serif;
 }
 
+.character-page,
+.character-page .character-page-header,
+.character-page .character-page-nav,
+.character-page .character-page-back,
+.character-page .character-folder-tab,
+.character-page .character-document,
+.character-page .character-profile-kicker,
+.character-page .character-document-label,
+.character-page .character-role,
+.character-page .character-page-kicker,
+.character-page .character-document > p:not(.character-document-label) {
+  font-family: var(--body);
+}
+
 .character-document > p:not(.character-document-label) {
   max-width: 58ch;
   margin: 0;
