@@ -9,18 +9,35 @@
 
   const spotlightBody = () => {
     if (!document.body) return;
-    const updateSpotlight = (event) => {
-      const x = `${(event.clientX / window.innerWidth) * 100}%`;
-      const y = `${(event.clientY / window.innerHeight) * 100}%`;
+
+    const setSpotlightPosition = (clientX, clientY) => {
+      const x = `${(clientX / window.innerWidth) * 100}%`;
+      const y = `${(clientY / window.innerHeight) * 100}%`;
       document.documentElement.style.setProperty('--spot-x', x);
       document.documentElement.style.setProperty('--spot-y', y);
       document.body.classList.add('is-spotlighting');
     };
 
-    document.addEventListener('pointermove', updateSpotlight);
-    document.addEventListener('pointerleave', () => document.body.classList.remove('is-spotlighting'));
-    document.addEventListener('pointerenter', () => document.body.classList.add('is-spotlighting'));
-    window.addEventListener('blur', () => document.body.classList.remove('is-spotlighting'));
+    document.addEventListener('pointermove', (event) => {
+      setSpotlightPosition(event.clientX, event.clientY);
+    });
+
+    document.addEventListener('pointerleave', () => {
+      document.body.classList.remove('is-spotlighting');
+    });
+
+    document.addEventListener('pointerenter', (event) => {
+      setSpotlightPosition(event.clientX, event.clientY);
+      document.body.classList.add('is-spotlighting');
+    });
+
+    window.addEventListener('blur', () => {
+      document.body.classList.remove('is-spotlighting');
+    });
+
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    setSpotlightPosition(centerX, centerY);
   };
 
   spotlightBody();
