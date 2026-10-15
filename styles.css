@@ -72,12 +72,36 @@
 }
 
 body {
+  --spot-x: 50%;
+  --spot-y: 50%;
+  position: relative;
   margin: 0;
   min-width: 320px;
   overflow-x: hidden;
   background: var(--canvas);
   color: var(--ink);
   font: 400 20px/1.4 var(--body);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  content: "";
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--spot-x) var(--spot-y),
+    rgb(255 255 255 / 0.05) 0%,
+    rgb(255 255 255 / 0.02) 12%,
+    rgb(0 0 0 / 0.05) 28%,
+    rgb(0 0 0 / 0.28) 100%
+  );
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+body.is-spotlighting::before {
+  opacity: 1;
 }
 
 button,
