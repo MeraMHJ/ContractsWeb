@@ -78,31 +78,32 @@ body {
   margin: 0;
   min-width: 320px;
   overflow-x: hidden;
-  background:
-    radial-gradient(
-      circle at var(--spot-x) var(--spot-y),
-      rgb(255 255 255 / 0.18) 0%,
-      rgb(255 255 255 / 0.08) 12%,
-      rgb(0 0 0 / 0.08) 28%,
-      rgb(0 0 0 / 0.42) 72%,
-      rgb(0 0 0 / 0.58) 100%
-    ),
-    var(--canvas);
+  background: var(--canvas);
   color: var(--ink);
   font: 400 20px/1.4 var(--body);
 }
 
-body.is-spotlighting {
-  background:
-    radial-gradient(
-      circle at var(--spot-x) var(--spot-y),
-      rgb(255 255 255 / 0.18) 0%,
-      rgb(255 255 255 / 0.08) 12%,
-      rgb(0 0 0 / 0.08) 28%,
-      rgb(0 0 0 / 0.42) 72%,
-      rgb(0 0 0 / 0.58) 100%
-    ),
-    var(--canvas);
+body::before {
+  position: fixed;
+  z-index: 99;
+  inset: 0;
+  background: radial-gradient(
+    circle 125vmax at var(--spot-x) var(--spot-y),
+    rgb(255 255 255 / 0.12) 0%,
+    rgb(255 255 255 / 0.05) 12%,
+    rgb(0 0 0 / 0.18) 28%,
+    rgb(0 0 0 / 0.38) 72%,
+    rgb(0 0 0 / 0.58) 100%
+  );
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: normal;
+  transition: opacity 180ms ease;
+}
+
+body.is-spotlighting::before {
+  opacity: 1;
 }
 
 button,
@@ -138,6 +139,10 @@ a:focus-visible {
 
 .skip-link:focus {
   transform: translateY(0);
+}
+
+.mobile-loading {
+  display: none;
 }
 
 .hero {
@@ -197,10 +202,10 @@ a:focus-visible {
   position: absolute;
   top: calc(50% + var(--hero-badge-offset));
   left: 50%;
-  width: 88%;
+  width: 78%;
   margin: 0;
   transform: translate(-50%, -50%);
-  font: 800 clamp(36px, 6.1vw, 88px) / 0.76 var(--display);
+  font: 800 clamp(36px, 5.6vw, 80px) / 0.76 var(--display);
   letter-spacing: -0.045em;
   text-align: center;
 }
@@ -1200,6 +1205,39 @@ html[data-motion="off"] * {
     font-size: 18px;
   }
 
+  .mobile-loading {
+    position: fixed;
+    z-index: 200;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: var(--charcoal);
+    color: var(--paper);
+    opacity: 1;
+    transition: opacity 400ms ease, visibility 0s linear 400ms;
+  }
+
+  .mobile-loading.is-dismissed {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .mobile-loading p {
+    margin: 24px;
+    font: 700 clamp(28px, 8vw, 42px) / 1.1 "The Seasons", Georgia, serif;
+    text-align: center;
+  }
+
+  body::before {
+    background: radial-gradient(
+      ellipse at center,
+      transparent 35%,
+      rgb(0 0 0 / 0.16) 68%,
+      rgb(0 0 0 / 0.48) 100%
+    );
+    opacity: 1;
+  }
+
   .character-page-header {
     padding: 24px 16px 30px;
   }
@@ -1258,7 +1296,7 @@ html[data-motion="off"] * {
   }
 
   .hero-title h1 {
-    font-size: clamp(35px, 11vw, 60px);
+    font-size: clamp(35px, 10vw, 54px);
   }
 
   .site-nav {

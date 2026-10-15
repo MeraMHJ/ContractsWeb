@@ -7,14 +7,31 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const motionToggle = document.querySelector('#motion-toggle');
 
+  const mobileLoadingScreen = document.querySelector('#mobile-loading');
+  if (mobileLoadingScreen) {
+    const loadingStartedAt = performance.now();
+    const dismissLoadingScreen = () => {
+      const remainingDisplayTime = Math.max(0, 1000 - (performance.now() - loadingStartedAt));
+      window.setTimeout(() => {
+        mobileLoadingScreen.classList.add('is-dismissed');
+      }, remainingDisplayTime);
+    };
+
+    if (document.readyState === 'complete') {
+      dismissLoadingScreen();
+    } else {
+      window.addEventListener('load', dismissLoadingScreen, { once: true });
+    }
+  }
+
   const spotlightBody = () => {
     if (!document.body) return;
 
     const setSpotlightPosition = (clientX, clientY) => {
       const x = `${(clientX / window.innerWidth) * 100}%`;
       const y = `${(clientY / window.innerHeight) * 100}%`;
-      document.documentElement.style.setProperty('--spot-x', x);
-      document.documentElement.style.setProperty('--spot-y', y);
+      document.body.style.setProperty('--spot-x', x);
+      document.body.style.setProperty('--spot-y', y);
       document.body.classList.add('is-spotlighting');
     };
 
