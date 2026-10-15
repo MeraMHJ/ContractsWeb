@@ -91,10 +91,11 @@ body::before {
   pointer-events: none;
   background: radial-gradient(
     circle at var(--spot-x) var(--spot-y),
-    rgb(255 255 255 / 0.05) 0%,
-    rgb(255 255 255 / 0.02) 12%,
-    rgb(0 0 0 / 0.05) 28%,
-    rgb(0 0 0 / 0.28) 100%
+    rgb(255 255 255 / 0.18) 0%,
+    rgb(255 255 255 / 0.08) 12%,
+    rgb(0 0 0 / 0.08) 28%,
+    rgb(0 0 0 / 0.42) 72%,
+    rgb(0 0 0 / 0.58) 100%
   );
   opacity: 0;
   transition: opacity 220ms ease;
